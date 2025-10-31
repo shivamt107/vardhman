@@ -1,0 +1,29 @@
+.partners-section {
+  padding: 3rem 1.5rem;
+  background: #eeeded;
+}
+
+.partners-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.partners-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  color: #222;
+}
+
+.partners-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .partners-container {
+    grid-template-columns: 1fr;
+  }
+}
