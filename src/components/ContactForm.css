@@ -43,6 +43,7 @@
   border-radius: 6px;
   margin-top: 0.25rem;
   box-sizing: border-box;
+  background-color: white;
 }
 
 .contact-form .row {

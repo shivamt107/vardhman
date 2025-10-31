@@ -4,12 +4,17 @@
 
 .hero-section {
   width: 100%;
-  height: 92vh;
+  height: 100vh;
+  scroll-snap-align: start;
 }
 
 .cards-section {
   padding: 4rem 2rem;
   background-color: white;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cards-container {
