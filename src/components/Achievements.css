@@ -1,0 +1,157 @@
+@keyframes numberCountUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.achievements-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  scroll-snap-align: start;
+}
+
+.achievements-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.achievements-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.achievements-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #666, transparent);
+}
+
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.achievement-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardReveal 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.achievement-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #333 0%, #666 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  animation: numberCountUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+.achievement-title {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.achievement-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Add animation delay for cards */
+.achievement-card:nth-child(1) { animation-delay: 0.1s; }
+.achievement-card:nth-child(2) { animation-delay: 0.3s; }
+.achievement-card:nth-child(3) { animation-delay: 0.5s; }
+.achievement-card:nth-child(4) { animation-delay: 0.7s; }
+
+/* Add animation delay for numbers */
+.achievement-card:nth-child(1) .achievement-number { animation-delay: 0.4s; }
+.achievement-card:nth-child(2) .achievement-number { animation-delay: 0.6s; }
+.achievement-card:nth-child(3) .achievement-number { animation-delay: 0.8s; }
+.achievement-card:nth-child(4) .achievement-number { animation-delay: 1s; }
+
+@media (max-width: 768px) {
+  .achievements-section {
+    padding: 3rem 1rem;
+  }
+
+  .achievements-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .achievements-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .achievement-number {
+    font-size: 3rem;
+  }
+
+  .achievement-title {
+    font-size: 1.1rem;
+  }
+
+  .achievement-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-section {
+    padding: 2rem 1rem;
+  }
+
+  .achievements-title {
+    font-size: 1.75rem;
+  }
+
+  .achievement-card {
+    padding: 1.5rem;
+  }
+
+  .achievement-number {
+    font-size: 2.5rem;
+  }
+}

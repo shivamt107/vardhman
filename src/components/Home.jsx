@@ -6,6 +6,8 @@ import './Home.css';
 import Footer from './Footer';
 import Partners from './Partners';
 import Stats from './Stats';
+import Achievements from './Achievements';
+import About from './About';
 
 // receive navigation handler from App
 const Home = ({ onContactClick }) => {
@@ -21,7 +23,7 @@ const Home = ({ onContactClick }) => {
 
     // Handle scroll events to update URL hash
     const handleScroll = () => {
-      const sections = ['hero', 'cards', 'stats', 'partners'];
+      const sections = ['hero', 'cards', 'achievements', 'about', 'partners'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -71,6 +73,7 @@ const Home = ({ onContactClick }) => {
           {cards.map((card, index) => (
             <Card
               key={index}
+              index={index}
               title={card.title}
               description={card.description}
               icon={card.icon}
@@ -78,11 +81,17 @@ const Home = ({ onContactClick }) => {
           ))}
         </div>
       </section>
-      <section id="stats" className="stats-section">
+      {/* <section id="stats" className="stats-section">
         <Stats />
+      </section> */}
+      <section id="achievements" className="achievements-section">
+        <Achievements />
       </section>
-      <section id="partners" className="partners-section">
+            <section id="partners" className="partners-section">
         <Partners />
+      </section>
+      <section id="about" className="about-section">
+        <About />
       </section>
       <Footer onContactClick={onContactClick} />
     </div>
