@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from './Header';
-import Slideshow from './Slideshow';
+import Hero from './Hero';
 import Card from './Card';
 import './Home.css';
 import Footer from './Footer';
@@ -66,7 +66,7 @@ const Home = ({ onContactClick }) => {
     <div className="home">
       <Header />
       <section id="hero" className="hero-section">
-        <Slideshow />
+        <Hero />
       </section>
       <section id="cards" className="cards-section">
         <div className="cards-container">
