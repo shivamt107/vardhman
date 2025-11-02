@@ -13,7 +13,7 @@ const Hero = () => {
         <p className="hero-subtitle">Driving Innovation. Delivering Excellence.</p>
         <div className="swipe-down-indicator">
           <span className="swipe-arrow">▼</span>
-          <span className="swipe-text">Swipe Down</span>
+          <span className="swipe-text">Scroll Down</span>
         </div>
         <div className="floating-shapes">
           <span className="shape shape1" />
