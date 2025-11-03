@@ -68,9 +68,6 @@ const Home = ({ onContactClick }) => {
       <section id="hero" className="hero-section">
         <Hero />
       </section>
-    <section id="achievements" className="slideshow-section">
-        <Slideshow />
-      </section>
       <section id="cards" className="cards-section">
         <div className="cards-container">
           {cards.map((card, index) => (
@@ -84,15 +81,18 @@ const Home = ({ onContactClick }) => {
           ))}
         </div>
       </section>
+          <section id="achievements" className="slideshow-section">
+        <Slideshow />
+      </section>
       {/* <section id="stats" className="stats-section">
         <Stats />
       </section> */}
       <section id="achievements" className="achievements-section">
         <Achievements />
       </section>
-      <section id="partners" className="partners-section">
+      {/* <section id="partners" className="partners-section">
         <ProductRange />
-      </section>
+      </section> */}
       <section id="about" className="about-section">
         <About />
       </section>

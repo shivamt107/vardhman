@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.jpg';
 
 const Header = ({ onTab }) => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="header">
@@ -21,9 +26,18 @@ const Header = ({ onTab }) => {
       </button>
 
       <nav className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-        <button className="nav-link" onClick={() => onTab('home')}>Home</button>
-        <button className="nav-link" onClick={() => onTab('product-range')}>Product Range</button>
-        <button className="nav-link" onClick={() => onTab('customers')}>Customers</button>
+        <button
+          className={`nav-link ${isActive('/') ? 'active' : ''}`}
+          onClick={() => { navigate('/'); setMobileMenuOpen(false); }}
+        >Home</button>
+        <button
+          className={`nav-link ${isActive('/product-range') ? 'active' : ''}`}
+          onClick={() => { navigate('/product-range'); setMobileMenuOpen(false); }}
+        >Product Range</button>
+        <button
+          className={`nav-link ${isActive('/customers') ? 'active' : ''}`}
+          onClick={() => { navigate('/customers'); setMobileMenuOpen(false); }}
+        >Customers</button>
       </nav>
     </header>
   );

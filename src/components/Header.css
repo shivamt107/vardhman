@@ -83,6 +83,11 @@
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   outline: none;
 }
+.nav-link.active {
+  background: #20B2AA;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
 .nav-link:active {
   background: #444;
   color: #fff;
