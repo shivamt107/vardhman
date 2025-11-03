@@ -1,6 +1,8 @@
 import React from 'react';
 import './Hero.css';
 import logo from '../assets/logo.jpg';
+import iso from '../assets/resources/header_images/iso.png';
+import mii from '../assets/resources/header_images/mii.png';
 
 const Hero = () => {
   return (
@@ -8,7 +10,9 @@ const Hero = () => {
       <div className="hero-content">
   <img src={logo} alt="Vardaan Industries Logo" className="hero-logo" />
         <h1 className="hero-title">
-          <span className="gradient-text">Vardaan Industries</span>
+             <img src={iso} alt="Vardaan Industries Logo" className="hero-logo" />
+              <img src={mii} alt="Vardaan Industries Logo" className="hero-logo" />
+          {/* <span className="gradient-text">Vardaan Industries</span> */}
         </h1>
         <p className="hero-subtitle">Driving Innovation. Delivering Excellence.</p>
         <div className="swipe-down-indicator">

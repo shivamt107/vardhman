@@ -4,7 +4,8 @@ import Hero from './Hero';
 import Card from './Card';
 import './Home.css';
 import Footer from './Footer';
-import Partners from './Partners';
+import ProductRange from './ProductRange';
+import Slideshow from './Slideshow';
 import Stats from './Stats';
 import Achievements from './Achievements';
 import About from './About';
@@ -22,27 +23,27 @@ const Home = ({ onContactClick }) => {
     }
 
     // Handle scroll events to update URL hash
-    const handleScroll = () => {
-      const sections = ['hero', 'cards', 'achievements', 'about', 'partners'];
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+    // const handleScroll = () => {
+    //   const sections = ['hero', 'cards', 'achievements', 'about', 'partners'];
+    //   const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { top, bottom } = element.getBoundingClientRect();
-          if (top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2) {
-            const hash = `#${section}`;
-            if (window.location.hash !== hash) {
-              window.history.replaceState(null, null, hash);
-            }
-            break;
-          }
-        }
-      }
-    };
+    //   for (const section of sections) {
+    //     const element = document.getElementById(section);
+    //     if (element) {
+    //       const { top, bottom } = element.getBoundingClientRect();
+    //       if (top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2) {
+    //         const hash = `#${section}`;
+    //         if (window.location.hash !== hash) {
+    //           window.history.replaceState(null, null, hash);
+    //         }
+    //         break;
+    //       }
+    //     }
+    //   }
+    // };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // window.addEventListener('scroll', handleScroll);
+    // return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const cards = [
     {
@@ -67,6 +68,9 @@ const Home = ({ onContactClick }) => {
       <section id="hero" className="hero-section">
         <Hero />
       </section>
+    <section id="achievements" className="slideshow-section">
+        <Slideshow />
+      </section>
       <section id="cards" className="cards-section">
         <div className="cards-container">
           {cards.map((card, index) => (
@@ -87,7 +91,7 @@ const Home = ({ onContactClick }) => {
         <Achievements />
       </section>
       <section id="partners" className="partners-section">
-        <Partners />
+        <ProductRange />
       </section>
       <section id="about" className="about-section">
         <About />
