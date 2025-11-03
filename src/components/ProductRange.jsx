@@ -7,7 +7,7 @@ import Emergency_talk_back_unit from '../assets/resources/pa/Emergency_talk_back
 import Main_Processing_unit from '../assets/resources/pa/Main_Processing_unit.png';
 import Mic from '../assets/resources/pa/Mic.png';
 import Speaker from '../assets/resources/pa/Speaker.png';
-import CCTV1 from '../assets/resources/CCTV/CCTV1.png';
+import CCTV1 from '../assets/resources/CCTV/CCTV.png';
 import CCTV2 from '../assets/resources/CCTV/CCTV2.png';
 import CCTV3 from '../assets/resources/CCTV/CCTV3.png';
 import CCTV4 from '../assets/resources/CCTV/CCTV4.png';
