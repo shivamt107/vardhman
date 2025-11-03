@@ -27,8 +27,8 @@ const Header = ({ onTab }) => {
 
       <nav className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <button
-          className={`nav-link ${isActive('/vardaan') ? 'active' : ''}`}
-          onClick={() => { navigate('/vardaan'); setMobileMenuOpen(false); }}
+          className={`nav-link ${isActive('/') ? 'active' : ''}`}
+          onClick={() => { navigate('/'); setMobileMenuOpen(false); }}
         >Home</button>
         <button
           className={`nav-link ${isActive('/product-range') ? 'active' : ''}`}
