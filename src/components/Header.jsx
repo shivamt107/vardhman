@@ -29,15 +29,21 @@ const Header = ({ onTab }) => {
         <button
           className={`nav-link ${isActive('/') ? 'active' : ''}`}
           onClick={() => { navigate('/'); setMobileMenuOpen(false); }}
-        >Home</button>
+        >
+          Home
+        </button>
         <button
           className={`nav-link ${isActive('/product-range') ? 'active' : ''}`}
           onClick={() => { navigate('/product-range'); setMobileMenuOpen(false); }}
-        >Product Range</button>
+        >
+          Product Range
+        </button>
         <button
           className={`nav-link ${isActive('/customers') ? 'active' : ''}`}
           onClick={() => { navigate('/customers'); setMobileMenuOpen(false); }}
-        >Customers</button>
+        >
+          Customers
+        </button>
       </nav>
     </header>
   );

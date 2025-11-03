@@ -16,6 +16,9 @@ const Home = ({ onContactClick }) => {
     // Scroll to section based on hash on load
     const hash = window.location.hash;
     if (hash) {
+      // Only handle simple element-id hashes (e.g., #hero). Ignore router hashes like #/product-range
+      const isElementIdHash = /^#[A-Za-z][\w-]*$/.test(hash);
+      if (!isElementIdHash) return;
       const element = document.querySelector(hash);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
