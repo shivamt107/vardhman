@@ -30,6 +30,7 @@
   position: sticky;
   top: 0;
   animation: headerSlideDown 0.8s ease-out;
+  background-color: white;
   /* background-color: #2e2e2e				 */
 }
 
