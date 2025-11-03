@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.jpg';
 
-const Header = () => {
+const Header = ({ onTab }) => {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="logo">
-        <img src={logo} alt="Smart Solution" className="logo-img" />
-        <span className="logo-text">Smart Solution</span>
+        <img src={logo} alt="Vardaan Industries Logo" className="logo-img" />
+        {/* <span className="logo-text">Vardaan Industries</span> */}
       </div>
-      <nav className="nav-menu">
-        {/* Add navigation items here if needed */}
+
+      <button
+        className="hamburger"
+        onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+
+      <nav className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <button className="nav-link" onClick={() => onTab('home')}>Home</button>
+        <button className="nav-link" onClick={() => onTab('product-range')}>Product Range</button>
+        <button className="nav-link" onClick={() => onTab('customers')}>Customers</button>
       </nav>
     </header>
   );

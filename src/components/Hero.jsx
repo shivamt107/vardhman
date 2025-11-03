@@ -1,14 +1,14 @@
 import React from 'react';
 import './Hero.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.jpg';
 
 const Hero = () => {
   return (
     <section className="hero-animated-bg">
       <div className="hero-content">
-        <img src={logo} alt="Smart Solutions Logo" className="hero-logo" />
+  <img src={logo} alt="Vardaan Industries Logo" className="hero-logo" />
         <h1 className="hero-title">
-          <span className="gradient-text">Smart Solutions</span>
+          <span className="gradient-text">Vardaan Industries</span>
         </h1>
         <p className="hero-subtitle">Driving Innovation. Delivering Excellence.</p>
         <div className="swipe-down-indicator">

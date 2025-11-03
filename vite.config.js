@@ -7,5 +7,5 @@ export default defineConfig({
   server: {
     port: 3000
   },
-  base: '/vardhman/'  // Replace with your repository name
+  base: '/vardaan'  // Replace with your repository name
 })

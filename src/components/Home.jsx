@@ -64,7 +64,6 @@ const Home = ({ onContactClick }) => {
 
   return (
     <div className="home">
-      <Header />
       <section id="hero" className="hero-section">
         <Hero />
       </section>
@@ -87,7 +86,7 @@ const Home = ({ onContactClick }) => {
       <section id="achievements" className="achievements-section">
         <Achievements />
       </section>
-            <section id="partners" className="partners-section">
+      <section id="partners" className="partners-section">
         <Partners />
       </section>
       <section id="about" className="about-section">

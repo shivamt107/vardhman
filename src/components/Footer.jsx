@@ -7,7 +7,7 @@ const Footer = ({ onContactClick }) => {
       <div className="footer-inner">
         <div className="footer-about">
           <h4>About</h4>
-          <p>Smart Solution provides innovative tech and logistics solutions to help businesses scale.</p>
+          <p>Vardaan Industries provides innovative tech and logistics solutions to help businesses scale.</p>
         </div>
 
         <div className="footer-contact">
@@ -22,7 +22,7 @@ const Footer = ({ onContactClick }) => {
         </div>
 
         <div className="footer-copy">
-          <p>© 2025 Smart Solution</p>
+          <p>© 2025 Vardaan Industries</p>
         </div>
       </div>
     </footer>

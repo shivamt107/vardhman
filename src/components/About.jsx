@@ -27,12 +27,12 @@ const About = () => {
   return (
     <section className="about-section" ref={aboutRef}>
       <div className="about-wrapper">
-        <h2 className="about-title">About Smart Solutions</h2>
+  <h2 className="about-title">About Vardaan Industries</h2>
         <div className="about-content">
           <div className="about-paragraph">
             <h3>Our Journey</h3>
             <p>
-            Since our establishment in 2010, SMART SOLUTION has an extensive experience that was acquired through many years of engagement in the industry. We are among the contributors who shape tomorrow's technology standards in Gujarat and Delhi. From our head oﬃce in
+            Since our establishment in 2010, VARDAAN INDUSTRIES has an extensive experience that was acquired through many years of engagement in the industry. We are among the contributors who shape tomorrow's technology standards in Gujarat and Delhi. From our head oﬃce in
 DELHI-NCR, a dedicated team of experienced professionals provide our services to an extensive portfolio of corporate, public sector Private Clients throughout the North and West India. We have a recognized ability to deliver services and solutions, tailored to ﬁt the unique needs of each organization according to its size and area of activity.
 
 
@@ -42,7 +42,7 @@ DELHI-NCR, a dedicated team of experienced professionals provide our services to
           <div className="about-paragraph">
             <h3>Our Expertise</h3>
             <p>
-           We inve stin new solutions and acquisitions, build our capabilities, and develop our teams to ensure that SMART SOLUTION is well positioned to help clients explore the opportunity – and deliver on the potential – of this new digital business era.
+           We invest in new solutions and acquisitions, build our capabilities, and develop our teams to ensure that VARDAAN INDUSTRIES is well positioned to help clients explore the opportunity – and deliver on the potential – of this new digital business era.
 
             </p>
           </div>
@@ -50,7 +50,7 @@ DELHI-NCR, a dedicated team of experienced professionals provide our services to
           <div className="about-paragraph">
             <h3>Our Commitment</h3>
             <p>
-              At Smart Solutions, we believe in building lasting relationships with our clients 
+              At Vardaan Industries, we believe in building lasting relationships with our clients 
               through transparency, reliability, and excellence. Every vehicle that enters our 
               facility receives personalized attention, and every client benefits from our 
               commitment to exceptional service and customer satisfaction.

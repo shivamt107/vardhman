@@ -9,7 +9,7 @@ const Slideshow = () => {
   const slides = [
     {
       image: smartSolution,
-      title: 'Welcome to Smart Solution',
+  title: 'Welcome to Vardaan Industries',
       description: 'Innovative solutions for your business needs'
     },
     {

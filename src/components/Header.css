@@ -30,6 +30,7 @@
   position: sticky;
   top: 0;
   animation: headerSlideDown 0.8s ease-out;
+  /* background-color: #2e2e2e				 */
 }
 
 .logo {
@@ -45,7 +46,7 @@
 
 .logo-text {
   font-weight: bold;
-  color: #4e4e4e;
+  color: #20B2AA;
   font-size: 1.25rem;
   white-space: nowrap;
   display: block;
@@ -60,7 +61,31 @@
 
 .nav-menu {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  background: none;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.08rem;
+  /* padding: 0.5rem 1.2rem; */
+  border-radius: 22px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+.nav-link:hover, .nav-link:focus {
+  background: #20B2AA;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  outline: none;
+}
+.nav-link:active {
+  background: #444;
+  color: #fff;
 }
 
 /* Responsive logo sizing */
@@ -80,7 +105,7 @@
 
 @media (max-width: 420px) {
   .logo-img {
-    height: 32px;
+    height: 48px;
   }
 
   .header {
@@ -93,5 +118,89 @@
 
   .logo-text {
     font-size: 13px;
+  }
+}
+
+/* Hamburger button for mobile */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #20B2AA;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Mobile nav menu (hidden by default) */
+.nav-menu.mobile {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  animation: headerSlideDown 0.3s ease-out;
+}
+
+/* Show nav when toggled */
+.nav-menu.mobile.open {
+  display: flex;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* Hide nav by default on mobile */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 999;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #20B2AA;
+    cursor: pointer;
+  }
+}
+
+/* Show nav normally on desktop */
+@media (min-width: 769px) {
+  .nav-menu {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
   }
 }
