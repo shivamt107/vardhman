@@ -8,12 +8,14 @@ const Hero = () => {
   return (
     <section className="hero-animated-bg">
       <div className="hero-content">
+                <div className="hero-title">
   <img src={logo} alt="Vardaan Industries Logo" className="hero-logo" />
-        <h1 className="hero-title">
+  </div>
+        <div className="hero-title">
              <img src={iso} alt="Vardaan Industries Logo" className="hero-logo" />
               <img src={mii} alt="Vardaan Industries Logo" className="hero-logo" />
           {/* <span className="gradient-text">Vardaan Industries</span> */}
-        </h1>
+        </div>
         <p className="hero-subtitle">Driving Innovation. Delivering Excellence.</p>
         <div className="swipe-down-indicator">
           <span className="swipe-arrow">▼</span>

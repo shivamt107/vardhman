@@ -2,11 +2,9 @@ import React, { useEffect } from 'react';
 import Header from './Header';
 import Hero from './Hero';
 import Card from './Card';
-import './Home.css';
 import Footer from './Footer';
 import ProductRange from './ProductRange';
 import Slideshow from './Slideshow';
-import Stats from './Stats';
 import Achievements from './Achievements';
 import ProductsOverview from './ProductsOverview';
 import About from './About';
@@ -68,13 +66,13 @@ const Home = ({ onContactClick }) => {
   ];
 
   return (
-    <div className="home">
-      <section id="hero" className="hero-section">
+    <div className="min-h-screen">
+      <section id="hero" className="w-full h-screen snap-start">
         <Hero />
       </section>
       <ProductsOverview />
-      <section id="cards" className="cards-section">
-        <div className="cards-container">
+      <section id="cards" className="py-16 px-8 bg-white snap-start flex flex-col justify-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           {cards.map((card, index) => (
             <Card
               key={index}
@@ -86,7 +84,7 @@ const Home = ({ onContactClick }) => {
           ))}
         </div>
       </section>
-          <section id="achievements" className="slideshow-section">
+      <section id="achievements" className="py-24 px-0 bg-gradient-to-br from-gray-50 to-gray-100 snap-start">
         <Slideshow />
       </section>
       {/* <section id="stats" className="stats-section">

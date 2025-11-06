@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './Card';
-import './Customers.css';
 import IR from '../assets/resources/Customers/Indian_railways.png';
 import ICF from '../assets/resources/Customers/Integral_cach _factory.png';
 import MCF from '../assets/resources/Customers/Modern_Coach _factory.jpg';
@@ -14,10 +13,10 @@ const customers = [
 ];
 
 const Customers = () => (
-  <section className="customer-section">
-    <div className="customer-wrapper">
-      <h2 className="customer-title">Our Customers</h2>
-      <div className="customer-container">
+  <section className="py-12 px-6 bg-gradient-to-b from-white to-gray-50 snap-start">
+    <div className="max-w-6xl mx-auto text-center">
+      <h2 className="text-4xl mb-12 text-gray-800">Our Customers</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         {customers.map((c, i) => (
           <Card key={i} title={c.title} image={c.image} index={i} />
         ))}

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import './Card.css';
 
 const Card = ({ title, description, icon, image, index }) => {
   const cardRef = useRef(null);
@@ -35,14 +34,17 @@ const Card = ({ title, description, icon, image, index }) => {
   }, [index]);
 
   return (
-    <div ref={cardRef} className="card">
+    <div 
+      ref={cardRef} 
+      className="bg-[#00000040] rounded-lg p-6 shadow-[0_4px_6px_rgba(0,0,0,0.1)] text-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] opacity-0 translate-y-[100px] [&.visible]:opacity-100 [&.visible]:translate-y-0 hover:scale-105 hover:bg-gradient-to-br hover:from-white hover:to-gray-100"
+    >
       {image ? (
-        <img loading="lazy" src={image} alt={title} className="card-image" />
+        <img loading="lazy" src={image} alt={title} className="w-[70%] h-[70%] object-contain mx-auto mb-4 block" />
       ) : (
-        <div className="card-icon">{icon}</div>
+        <div className="text-3xl mb-4 text-[#007bff]">{icon}</div>
       )}
-      <h3 className="card-title">{title}</h3>
-      <p className="card-description">{description}</p>
+      <h3 className="m-0 mb-4 text-gray-800">{title}</h3>
+      <p className="text-gray-600 leading-6 m-0">{description}</p>
     </div>
   );
 };

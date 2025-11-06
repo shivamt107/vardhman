@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Card from './Card';
-import './ProductRange.css';
 import Driver_Desk from '../assets/resources/pa/Driver_Desk.png';
 import Emergency_Push_Button from '../assets/resources/pa/Emergency_Push_Button.png';
 import Emergency_talk_back_unit from '../assets/resources/pa/Emergency_talk_back_unit.png';
@@ -119,63 +118,111 @@ const ProductRange = () => {
   }, []);
 
   return (
-    <section className="partners-section">
-      <div className="partners-wrapper">
-        <h2 className="partners-title">Products</h2>
-        <div className="partners-tabs-wrapper">
-          <button className="tabs-arrow left" onClick={scrollTabsLeft} aria-label="Scroll left">&lt;</button>
-          <div className="partners-tabs" ref={tabsRef}>
-          <button
-            className={`partners-tab ${selectedTab === 'Public Addresses' ? 'active' : ''}`}
-            onClick={() => setSelectedTab('Public Addresses')}
+    <section className="py-8 md:py-12 px-4 md:px-6 bg-[#eeeded] snap-start flex flex-col  min-h-screen">
+      <div className="max-w-6xl mx-auto text-center w-full flex flex-col h-full">
+        <h2 className="text-2xl md:text-3xl mb-4 md:mb-5 text-gray-800">Products</h2>
+        
+        {/* Tabs section */}
+        <div className="relative mb-6 w-full">
+          
+          <div 
+            className="flex gap-2 overflow-x-auto px-0 md:px-10 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pt-[50px] md:pt-0"
+            ref={tabsRef}
           >
-            Public Addresses
-          </button>
-          <button
-            className={`partners-tab ${selectedTab === 'Passenger Info System' ? 'active' : ''}`}
-            onClick={() => setSelectedTab('Passenger Info System')}
-          >
-            Passenger Info System
-          </button>
-          <button
-            className={`partners-tab ${selectedTab === 'CCTV' ? 'active' : ''}`}
-            onClick={() => setSelectedTab('CCTV')}
-          >
-            CCTV
-          </button>
-          <button
-            className={`partners-tab ${selectedTab === 'Information On Board' ? 'active' : ''}`}
-            onClick={() => setSelectedTab('Information On Board')}
-          >
-            Information On Board
-          </button>
+            <button
+              className={`px-4 md:px-6 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 whitespace-nowrap text-sm md:text-base ${
+                selectedTab === 'Public Addresses' 
+                  ? 'bg-[#20B2AA] text-white shadow-md' 
+                  : 'bg-white text-gray-700 hover:bg-[#20B2AA] hover:text-white'
+              }`}
+              onClick={() => setSelectedTab('Public Addresses')}
+            >
+              Public Addresses
+            </button>
+            <button
+              className={`px-4 md:px-6 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 whitespace-nowrap text-sm md:text-base ${
+                selectedTab === 'Passenger Info System' 
+                  ? 'bg-[#20B2AA] text-white shadow-md' 
+                  : 'bg-white text-gray-700 hover:bg-[#20B2AA] hover:text-white'
+              }`}
+              onClick={() => setSelectedTab('Passenger Info System')}
+            >
+              Passenger Info System
+            </button>
+            <button
+              className={`px-4 md:px-6 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 whitespace-nowrap text-sm md:text-base ${
+                selectedTab === 'CCTV' 
+                  ? 'bg-[#20B2AA] text-white shadow-md' 
+                  : 'bg-white text-gray-700 hover:bg-[#20B2AA] hover:text-white'
+              }`}
+              onClick={() => setSelectedTab('CCTV')}
+            >
+              CCTV
+            </button>
+            <button
+              className={`px-4 md:px-6 py-2 rounded-lg border-none cursor-pointer transition-all duration-300 whitespace-nowrap text-sm md:text-base ${
+                selectedTab === 'Information On Board' 
+                  ? 'bg-[#20B2AA] text-white shadow-md' 
+                  : 'bg-white text-gray-700 hover:bg-[#20B2AA] hover:text-white'
+              }`}
+              onClick={() => setSelectedTab('Information On Board')}
+            >
+              Information On Board
+            </button>
           </div>
-          <button className="tabs-arrow right" onClick={scrollTabsRight} aria-label="Scroll right">&gt;</button>
+          
         </div>
+        
+        {/* Content section */}
         {isMobile ? (
-          <div className="partners-slideshow">
-            <button className="slide-button prev" onClick={prevSlide}>&lt;</button>
-            <div className="slide-container">
-              <Card 
-                title={currentItems[currentIndex].title} 
-                image={currentItems[currentIndex].image} 
-              />
+          <div className="relative w-full max-w-[350px] mx-auto px-8 flex-1 flex flex-col justify-center pt-[50px]">
+            <button 
+              className="absolute top-1/2 -translate-y-1/2 left-0 bg-transparent text-gray-800 border-none cursor-pointer text-2xl p-0 transition-all duration-300 opacity-70 hover:text-gray-500 z-10 active:opacity-100" 
+              onClick={prevSlide}
+              aria-label="Previous slide"
+            >
+              &lt;
+            </button>
+            
+            <div className="mx-auto w-full h-[280px] flex items-center justify-center">
+              <div className="bg-[#00000040] rounded-lg p-4 shadow-[0_4px_6px_rgba(0,0,0,0.1)] text-center w-full h-full flex flex-col justify-center">
+                <img 
+                  loading="lazy" 
+                  src={currentItems[currentIndex].image} 
+                  alt={currentItems[currentIndex].title} 
+                  className="w-full h-[180px] object-contain mx-auto mb-3 block" 
+                />
+                <h3 className="m-0 text-gray-800 text-base">{currentItems[currentIndex].title}</h3>
+              </div>
             </div>
-            <button className="slide-button next" onClick={nextSlide}>&gt;</button>
-            <div className="slide-dots">
+            
+            <button 
+              className="absolute top-1/2 -translate-y-1/2 right-0 bg-transparent text-gray-800 border-none cursor-pointer text-2xl p-0 transition-all duration-300 opacity-70 hover:text-gray-500 z-10 active:opacity-100" 
+              onClick={nextSlide}
+              aria-label="Next slide"
+            >
+              &gt;
+            </button>
+            
+            <div className="flex justify-center gap-2 mt-4">
               {currentItems.map((_, index) => (
                 <button
                   key={index}
-                  className={`slide-dot ${index === currentIndex ? 'active' : ''}`}
+                  className={`w-2 h-2 rounded-full border-none cursor-pointer p-0 transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-gray-600 scale-125 shadow-[0_0_15px_rgba(102,102,102,0.5)]' 
+                      : 'bg-[#ccc] hover:scale-150'
+                  }`}
                   onClick={() => setCurrentIndex(index)}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
           </div>
         ) : (
-          <div className="partners-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {currentItems.map((p, i) => (
-              <Card key={i} title={p.title} image={p.image} />
+              <Card key={i} title={p.title} image={p.image} index={i} />
             ))}
           </div>
         )}

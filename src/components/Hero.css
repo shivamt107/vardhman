@@ -81,8 +81,8 @@
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 800;
+  display: flex;
+  justify-content: center;
   margin-bottom: 1rem;
   letter-spacing: 2px;
 }
