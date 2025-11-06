@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Card from './Card';
 import './ProductRange.css';
 import Driver_Desk from '../assets/resources/pa/Driver_Desk.png';
@@ -57,6 +57,7 @@ const ProductRange = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const tabsRef = useRef(null);
   const [selectedTab, setSelectedTab] = useState('Public Addresses');
 
   const currentItems = selectedTab === 'Public Addresses'
@@ -105,11 +106,25 @@ const ProductRange = () => {
     );
   }, [currentItems.length]);
 
+  const scrollTabsLeft = useCallback(() => {
+    if (tabsRef.current) {
+      tabsRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+    }
+  }, []);
+
+  const scrollTabsRight = useCallback(() => {
+    if (tabsRef.current) {
+      tabsRef.current.scrollBy({ left: 200, behavior: 'smooth' });
+    }
+  }, []);
+
   return (
     <section className="partners-section">
       <div className="partners-wrapper">
         <h2 className="partners-title">Products</h2>
-        <div className="partners-tabs">
+        <div className="partners-tabs-wrapper">
+          <button className="tabs-arrow left" onClick={scrollTabsLeft} aria-label="Scroll left">&lt;</button>
+          <div className="partners-tabs" ref={tabsRef}>
           <button
             className={`partners-tab ${selectedTab === 'Public Addresses' ? 'active' : ''}`}
             onClick={() => setSelectedTab('Public Addresses')}
@@ -134,6 +149,8 @@ const ProductRange = () => {
           >
             Information On Board
           </button>
+          </div>
+          <button className="tabs-arrow right" onClick={scrollTabsRight} aria-label="Scroll right">&gt;</button>
         </div>
         {isMobile ? (
           <div className="partners-slideshow">

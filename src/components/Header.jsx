@@ -11,7 +11,7 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="header">
+    <header className="header" onClick={() => isMobileMenuOpen && setMobileMenuOpen(false)}>
       <div className="logo">
         <img src={logo} alt="Vardaan Industries Logo" className="logo-img" />
         {/* <span className="logo-text">Vardaan Industries</span> */}
@@ -25,7 +25,7 @@ const Header = () => {
         ☰
       </button>
 
-      <nav className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+      <nav className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
         <button
           className={`nav-link ${isActive('/') ? 'active' : ''}`}
           onClick={() => { navigate('/'); setMobileMenuOpen(false); }}
