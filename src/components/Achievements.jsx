@@ -8,18 +8,18 @@ const Achievements = () => {
 
   const achievements = [
     {
-      number: '15+',
+      number: '4+',
       title: 'Years of Excellence',
       description: 'Delivering outstanding service since 2010'
     },
+    // {
+    //   number: '1000+',
+    //   title: 'Happy Clients',
+    //   description: 'Trust us with their automotive needs'
+    // },
     {
-      number: '1000+',
-      title: 'Happy Clients',
-      description: 'Trust us with their automotive needs'
-    },
-    {
-      number: '10+',
-      title: 'Brand Partnerships',
+      number: '4+',
+      title: 'Customers',
       description: 'Official partner with leading car manufacturers'
     },
     {

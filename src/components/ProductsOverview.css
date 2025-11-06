@@ -1,0 +1,83 @@
+.products-overview-section {
+  padding: 3rem 0.2rem;
+  background-color: #f5f5f5;
+}
+
+.products-overview-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-overview-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #3d3d3d;
+  text-align: center;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  will-change: transform;
+  animation: marquee-scroll 5s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.marquee-item img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.products-overview-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.overview-btn {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.overview-btn.primary {
+  background: #20B2AA;
+  color: #fff;
+  border-color: #20B2AA;
+}
+
+@media (max-width: 768px) {
+  .marquee-item {
+    width: 150px;
+    height: 100px;
+  }
+}
+

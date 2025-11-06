@@ -8,6 +8,7 @@ import ProductRange from './ProductRange';
 import Slideshow from './Slideshow';
 import Stats from './Stats';
 import Achievements from './Achievements';
+import ProductsOverview from './ProductsOverview';
 import About from './About';
 
 // receive navigation handler from App
@@ -71,6 +72,7 @@ const Home = ({ onContactClick }) => {
       <section id="hero" className="hero-section">
         <Hero />
       </section>
+      <ProductsOverview />
       <section id="cards" className="cards-section">
         <div className="cards-container">
           {cards.map((card, index) => (
@@ -104,4 +106,4 @@ const Home = ({ onContactClick }) => {
   );
 };
 
-export default Home;
+export default React.memo(Home);

@@ -37,7 +37,7 @@ const Card = ({ title, description, icon, image, index }) => {
   return (
     <div ref={cardRef} className="card">
       {image ? (
-        <img src={image} alt={title} className="card-image" />
+        <img loading="lazy" src={image} alt={title} className="card-image" />
       ) : (
         <div className="card-icon">{icon}</div>
       )}
@@ -47,4 +47,4 @@ const Card = ({ title, description, icon, image, index }) => {
   );
 };
 
-export default Card;
+export default React.memo(Card);

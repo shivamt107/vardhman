@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.jpg';
 
-const Header = ({ onTab }) => {
+const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -49,4 +49,4 @@ const Header = ({ onTab }) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

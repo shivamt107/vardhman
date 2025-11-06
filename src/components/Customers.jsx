@@ -26,4 +26,4 @@ const Customers = () => (
   </section>
 );
 
-export default Customers;
+export default React.memo(Customers);

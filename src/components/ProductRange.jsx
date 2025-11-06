@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Card from './Card';
 import './ProductRange.css';
 import Driver_Desk from '../assets/resources/pa/Driver_Desk.png';
@@ -93,17 +93,17 @@ const ProductRange = () => {
     }
   }, [isMobile, currentItems.length]);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => 
       prevIndex === currentItems.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [currentItems.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? currentItems.length - 1 : prevIndex - 1
     );
-  };
+  }, [currentItems.length]);
 
   return (
     <section className="partners-section">
@@ -167,5 +167,4 @@ const ProductRange = () => {
   );
 };
 
-
-export default ProductRange;
+export default React.memo(ProductRange);
