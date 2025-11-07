@@ -184,17 +184,19 @@ const ProductRange = () => {
               &lt;
             </button>
             
-            <div className="mx-auto w-full h-[280px] flex items-center justify-center">
-              <div className="bg-[#00000040] rounded-lg p-4 shadow-[0_4px_6px_rgba(0,0,0,0.1)] text-center w-full h-full flex flex-col justify-center">
-                <img 
-                  loading="lazy" 
-                  src={currentItems[currentIndex].image} 
-                  alt={currentItems[currentIndex].title} 
-                  className="w-full h-[180px] object-contain mx-auto mb-3 block" 
-                />
-                <h3 className="m-0 text-gray-800 text-base">{currentItems[currentIndex].title}</h3>
+            {currentItems[currentIndex] && (
+              <div className="mx-auto w-full h-[280px] flex items-center justify-center">
+                <div className="bg-[#00000040] rounded-lg p-4 shadow-[0_4px_6px_rgba(0,0,0,0.1)] text-center w-full h-full flex flex-col justify-center">
+                  <img 
+                    loading="lazy" 
+                    src={currentItems[currentIndex].image} 
+                    alt={currentItems[currentIndex].title} 
+                    className="w-full h-[180px] object-contain mx-auto mb-3 block" 
+                  />
+                  <h3 className="m-0 text-gray-800 text-base">{currentItems[currentIndex].title}</h3>
+                </div>
               </div>
-            </div>
+            )}
             
             <button 
               className="absolute top-1/2 -translate-y-1/2 right-0 bg-transparent text-gray-800 border-none cursor-pointer text-2xl p-0 transition-all duration-300 opacity-70 hover:text-gray-500 z-10 active:opacity-100" 
