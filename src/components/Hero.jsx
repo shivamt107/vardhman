@@ -91,7 +91,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-[fadeInUp_1s_1s_forwards]">
+        <div className="absolute  left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-[fadeInUp_1s_1s_forwards]">
           <span className="text-sm text-gray-500 font-medium tracking-wide">Scroll Down</span>
           <svg className="w-6 h-6 text-gray-400 animate-bounceDown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
