@@ -38,24 +38,24 @@ const Header = () => {
       >
         <button
           className={`px-5 py-2 no-underline font-medium text-[1.08rem] rounded-[22px] transition-all duration-200 relative tracking-wide border-none cursor-pointer ${
-            isActive('/') ? 'bg-[#20B2AA] text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
-          } active:bg-[#444] active:text-white focus:outline-none`}
+            isActive('/') ? '!bg-[#20B2AA] !text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
+          } active:bg-[#20B2AA] active:text-white focus:outline-none`}
           onClick={() => { navigate('/'); setMobileMenuOpen(false); }}
         >
           Home
         </button>
         <button
           className={`px-5 py-2 no-underline font-medium text-[1.08rem] rounded-[22px] transition-all duration-200 relative tracking-wide border-none cursor-pointer ${
-            isActive('/product-range') ? 'bg-[#20B2AA] text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
-          } active:bg-[#444] active:text-white focus:outline-none`}
+            isActive('/product-range') ? '!bg-[#20B2AA] !text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
+          } active:bg-[#20B2AA] active:text-white focus:outline-none`}
           onClick={() => { navigate('/product-range'); setMobileMenuOpen(false); }}
         >
           Product Range
         </button>
         <button
           className={`px-5 py-2 no-underline font-medium text-[1.08rem] rounded-[22px] transition-all duration-200 relative tracking-wide border-none cursor-pointer ${
-            isActive('/customers') ? 'bg-[#20B2AA] text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
-          } active:bg-[#444] active:text-white focus:outline-none`}
+            isActive('/customers') ? '!bg-[#20B2AA] !text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
+          } active:bg-[#20B2AA] active:text-white focus:outline-none`}
           onClick={() => { navigate('/customers'); setMobileMenuOpen(false); }}
         >
           Customers
