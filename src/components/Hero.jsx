@@ -60,7 +60,7 @@ const Hero = () => {
 
         {/* Main headline */}
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 leading-tight animate-[fadeInUp_0.8s_0.4s_forwards]">
-          Data to enrich your<br />
+          Products to enrich<br />
           <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
             railway solutions
           </span>
