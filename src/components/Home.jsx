@@ -70,7 +70,9 @@ const Home = ({ onContactClick }) => {
       <section id="hero" className="w-full h-screen snap-start">
         <Hero />
       </section>
-      <ProductsOverview />
+      <section id="product">
+        <ProductsOverview />
+      </section>
       <section id="cards" className="py-16 px-8 bg-white snap-start flex flex-col justify-center">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           {cards.map((card, index) => (

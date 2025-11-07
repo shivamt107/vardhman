@@ -11,56 +11,119 @@ const Header = () => {
 
   return (
     <header 
-      className="flex justify-between items-center py-4 px-8 shadow-[0_4px_10px_rgba(0,0,0,0.03),0_0_2px_rgba(0,0,0,0.06),0_2px_6px_rgba(0,0,0,0.12)] z-[1000] sticky top-0 animate-[headerSlideDown_0.8s_ease-out] bg-white" 
+      className="fixed top-0 left-0 right-0 z-[1000] bg-gradient-to-br from-purple-50/90 via-pink-50/90 to-blue-50/90 backdrop-blur-lg border-b border-white/30" 
       onClick={() => isMobileMenuOpen && setMobileMenuOpen(false)}
-      style={{
-        animation: 'headerSlideDown 0.8s ease-out'
-      }}
     >
-      <div className="flex items-center gap-2 transition-transform duration-300 hover:scale-105">
-        <img src={logo} alt="Vardaan Industries Logo" className="h-10 w-auto block" />
+      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center gap-2 transition-transform duration-300 hover:scale-105 cursor-pointer" onClick={() => navigate('/')}>
+          <img src={logo} alt="Vardaan Industries Logo" className="h-10 w-auto block" />
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-2">
+          <button
+            className={`px-5 py-2 font-medium text-[15px] rounded-full transition-all duration-200 ${
+              isActive('/') 
+                ? 'bg-[#20B2AA] text-white shadow-md' 
+                : 'text-gray-700 hover:bg-gray-200/50'
+            }`}
+            onClick={() => navigate('/')}
+          >
+            Home
+          </button>
+          <button
+            className={`px-5 py-2 font-medium text-[15px] rounded-full transition-all duration-200 ${
+              isActive('/product-range') 
+                ? 'bg-[#20B2AA] text-white shadow-md' 
+                : 'text-gray-700 hover:bg-gray-200/50'
+            }`}
+            onClick={() => navigate('/product-range')}
+          >
+            Product Range
+          </button>
+          <button
+            className={`px-5 py-2 font-medium text-[15px] rounded-full transition-all duration-200 ${
+              isActive('/customers') 
+                ? 'bg-[#20B2AA] text-white shadow-md' 
+                : 'text-gray-700 hover:bg-gray-200/50'
+            }`}
+            onClick={() => navigate('/customers')}
+          >
+            Customers
+          </button>
+        </nav>
+
+        {/* Right side - Contact button (desktop) */}
+        <button className="hidden md:flex items-center gap-2 px-5 py-2 font-medium text-[15px] text-gray-700 hover:text-gray-900 transition-colors">
+          Contact Us
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden block text-2xl text-gray-900 cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            setMobileMenuOpen(!isMobileMenuOpen);
+          }}
+          aria-label="Toggle navigation"
+        >
+          {isMobileMenuOpen ? '✕' : '☰'}
+        </button>
       </div>
 
-      <button
-        className="md:hidden block text-3xl bg-transparent border-none text-[#20B2AA] cursor-pointer z-[1100]"
-        onClick={(e) => {
-          e.stopPropagation();
-          setMobileMenuOpen(!isMobileMenuOpen);
-        }}
-        aria-label="Toggle navigation"
-      >
-        ☰
-      </button>
-
-      <nav 
-        className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex gap-2 items-center flex-col md:flex-row absolute md:relative top-[60px] md:top-0 right-4 md:right-0 bg-white md:bg-transparent p-4 md:p-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)] md:shadow-none rounded-lg md:rounded-none z-[999]`}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          className={`px-5 py-2 no-underline font-medium text-[1.08rem] rounded-[22px] transition-all duration-200 relative tracking-wide border-none cursor-pointer ${
-            isActive('/') ? '!bg-[#20B2AA] !text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
-          } active:bg-[#20B2AA] active:text-white focus:outline-none`}
-          onClick={() => { navigate('/'); setMobileMenuOpen(false); }}
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <nav 
+          className="md:hidden bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 border-t border-white/30"
+          onClick={(e) => e.stopPropagation()}
         >
-          Home
-        </button>
-        <button
-          className={`px-5 py-2 no-underline font-medium text-[1.08rem] rounded-[22px] transition-all duration-200 relative tracking-wide border-none cursor-pointer ${
-            isActive('/product-range') ? '!bg-[#20B2AA] !text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
-          } active:bg-[#20B2AA] active:text-white focus:outline-none`}
-          onClick={() => { navigate('/product-range'); setMobileMenuOpen(false); }}
-        >
-          Product Range
-        </button>
-        <button
-          className={`px-5 py-2 no-underline font-medium text-[1.08rem] rounded-[22px] transition-all duration-200 relative tracking-wide border-none cursor-pointer ${
-            isActive('/customers') ? '!bg-[#20B2AA] !text-white shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : 'bg-transparent text-[#222] hover:bg-[#20B2AA] hover:text-white hover:shadow-[0_2px_12px_rgba(0,0,0,0.08)]'
-          } active:bg-[#20B2AA] active:text-white focus:outline-none`}
-          onClick={() => { navigate('/customers'); setMobileMenuOpen(false); }}
-        >
-          Customers
-        </button>
-      </nav>
+          <div className="px-6 py-4 flex flex-col gap-2">
+            <button
+              className={`px-5 py-3 font-medium text-[15px] rounded-lg text-left transition-all duration-200 ${
+                isActive('/') 
+                  ? 'bg-[#20B2AA] text-white shadow-md' 
+                  : 'text-gray-700 hover:bg-gray-200/50'
+              }`}
+              onClick={() => { navigate('/'); setMobileMenuOpen(false); }}
+            >
+              Home
+            </button>
+            <button
+              className={`px-5 py-3 font-medium text-[15px] rounded-lg text-left transition-all duration-200 ${
+                isActive('/product-range') 
+                  ? 'bg-[#20B2AA] text-white shadow-md' 
+                  : 'text-gray-700 hover:bg-gray-200/50'
+              }`}
+              onClick={() => { navigate('/product-range'); setMobileMenuOpen(false); }}
+            >
+              Product Range
+            </button>
+            <button
+              className={`px-5 py-3 font-medium text-[15px] rounded-lg text-left transition-all duration-200 ${
+                isActive('/customers') 
+                  ? 'bg-[#20B2AA] text-white shadow-md' 
+                  : 'text-gray-700 hover:bg-gray-200/50'
+              }`}
+              onClick={() => { navigate('/customers'); setMobileMenuOpen(false); }}
+            >
+              Customers
+            </button>
+            <button
+              className="px-5 py-3 font-medium text-[15px] rounded-lg text-left text-gray-700 hover:bg-gray-200/50 transition-all duration-200 flex items-center gap-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      )}
     </header>
   );
 };

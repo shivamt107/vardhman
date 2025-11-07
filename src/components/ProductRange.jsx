@@ -118,7 +118,7 @@ const ProductRange = () => {
   }, []);
 
   return (
-    <section className="py-8 md:py-12 px-4 md:px-6 bg-[#eeeded] snap-start flex flex-col  min-h-screen">
+    <section className={`${isMobile ? 'min-h-screen flex items-center justify-center' : 'pt-20'} bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 relative overflow-hidden px-4`}>
       <div className="max-w-6xl mx-auto text-center w-full flex flex-col h-full">
         <h2 className="text-2xl md:text-3xl mb-4 md:mb-5 text-gray-800">Products</h2>
         
@@ -175,7 +175,7 @@ const ProductRange = () => {
         
         {/* Content section */}
         {isMobile ? (
-          <div className="relative w-full max-w-[350px] mx-auto px-8 flex-1 flex flex-col justify-center pt-[50px]">
+          <div className="relative w-full max-w-[350px] mx-auto px-8 flex-1 flex flex-col justify-center ">
             <button 
               className="absolute top-1/2 -translate-y-1/2 left-0 bg-transparent text-gray-800 border-none cursor-pointer text-2xl p-0 transition-all duration-300 opacity-70 hover:text-gray-500 z-10 active:opacity-100" 
               onClick={prevSlide}

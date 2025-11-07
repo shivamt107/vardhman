@@ -13,7 +13,7 @@ const customers = [
 ];
 
 const Customers = () => (
-  <section className="py-12 px-6 bg-gradient-to-b from-white to-gray-50 snap-start">
+  <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 relative overflow-hidden px-4 pt-20">
     <div className="max-w-6xl mx-auto text-center">
       <h2 className="text-4xl mb-12 text-gray-800">Our Customers</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
